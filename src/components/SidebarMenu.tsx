@@ -19,21 +19,21 @@ const SidebarMenu: React.FC = () => {
         <li>
           {/* NavLink do react-router-dom já injeta uma classe "active" quando selecionado */}
           <NavLink
-            to="/"
+            to="/biblioteca"
             end
             className={({ isActive }) => (isActive ? `${css.navItem} ${css.active}` : css.navItem)}
           >
-            Página Inicial
+            Voltar ao Hub
           </NavLink>
         </li>
         {/* Renderização dinâmica dos módulos do nosso arquivo de dados! */}
         {tutorialData.map((module) => (
           <li key={module.id}>
             <NavLink
-              to={`/modulo/${module.id}`}
+              to={`/biblioteca/claude/modulo/${module.id}`}
               className={({ isActive }) => (isActive ? `${css.navItem} ${css.active}` : css.navItem)}
             >
-              {module.title.split('—')[0].trim()} {/* Pegamos só a parte curta do título */}
+              {module.title.split('—')[0].trim()}
             </NavLink>
           </li>
         ))}

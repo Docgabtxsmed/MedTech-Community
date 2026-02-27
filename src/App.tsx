@@ -1,35 +1,34 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-/* Componentes Estruturais */
-import Layout from './components/Layout';
+/* Layouts Mestres */
+import PublicLayout from './layouts/PublicLayout';
+import WorkspaceLayout from './layouts/WorkspaceLayout';
 
-/* Páginas */
-import Home from './pages/Home';
-import TopicPage from './pages/TopicPage';
+/* Páginas Publicas (Vendas/Apresentação) */
+import LandingPage from './pages/Landing/LandingPage';
 
-/**
- * App.tsx é o ponto de entrada principal após o main.tsx.
- * Aqui nós configuramos as "Rotas" (Caminhos/URLs) que o usuário pode navegar.
- */
+/* Páginas Internas (Workspace/Bibliotecas) */
+import LibraryHome from './pages/Library/LibraryHome';
+import TopicPage from './pages/TopicPage'; 
+
 const App: React.FC = () => {
   return (
-    // BrowserRouter: Encapsula todo o app e gerencia o histórico do navegador (URLs)
     <BrowserRouter>
-      {/* O Layout é persistente, não recarrega quando mudamos de tela! */}
-      <Layout>
-        {/* Routes define os "slots" que vão exibir componentes diferentes baseados na URL */}
-        <Routes>
-          {/* A Rota principal ("/") carrega a página Home */}
-          <Route path="/" element={<Home />} />
-          
-          {/* 
-            Rota dinâmica. O ":id" significa que qualquer coisa após "/modulo/" 
-            será passada como parâmetro para a TopicPage.
-          */}
-          <Route path="/modulo/:id" element={<TopicPage />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        
+        {/* Rota Pública (Landing Page MedTech) */}
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<LandingPage />} />
+        </Route>
+
+        {/* Rota da Biblioteca (Workspace com Sidebar) */}
+        <Route path="/biblioteca" element={<WorkspaceLayout />}>
+          <Route index element={<LibraryHome />} />
+          <Route path="claude/modulo/:id" element={<TopicPage />} />
+        </Route>
+
+      </Routes>
     </BrowserRouter>
   );
 };

@@ -1,28 +1,34 @@
-/* Variáveis e Paleta de Cores (Design System) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis e Paleta de Cores Premium (MedTech Design System) */
 :root {
-  /* Background / Space / Tecnológico */
-  --color-bg-space: #0f172a; /* Slate-900 - Azul muito escuro */
-  --color-bg-panel: #1e293b; /* Slate-800 - Fundo para áreas secundárias, botões solares, código */
-
+  /* Backgrounds: Mistura de Naval Escuro (Confiabilidade) com Fundo Clean */
+  --color-bg-space: #0f172a; /* Slate 900 - Fundo Geral/Landing */
+  --color-bg-panel: #1e293b; /* Slate 800 - Cards e Elevações */
+  --color-bg-medical: #082f49; /* Sky 900 - Tom clínico de confiaça (Header/Hero) */
+  
   /* Cores de Texto Principais */
-  --color-text-white: #f8fafc; /* Slate-50 - Quase branco puro para excelente contraste */
-  --color-text-muted: #cbd5e1; /* Slate-300 - Branco acinzentado para textos de apoio */
-
-  /* Cores de Destaque / Key-words */
-  --color-accent-cyan: #06b6d4; /* Cyan-500 - Elementos brilhantes, links */
-  --color-accent-darkgreen: #10b981; /* Emerald-500 - Aprovações, botões, código concluído */
-  --color-accent-yellow: #eab308; /* Yellow-500 - Atenção, analogias médicas, ideias chave */
-
+  --color-text-white: #f8fafc; /* Slate 50 - Quase branco puro */
+  --color-text-muted: #cbd5e1; /* Slate 300 - Branco acinzentado */
+  
+  /* Destaques (Accent Colors) */
+  --color-accent-cyan: #06b6d4; /* Cyan 500 - Tech, Links, Call to Actions */
+  --color-accent-blue: #3b82f6; /* Blue 500 - Brand primary */
+  --color-accent-darkgreen: #10b981; /* Emerald 500 - Success/Tech */
+  --color-accent-yellow: #eab308; /* Yellow 500 - Highlights */
+  
   /* Espaçamentos Consistentes */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
-
+  --spacing-xxl: 5rem;
+  
   /* Bordas */
   --radius-sm: 6px;
   --radius-md: 12px;
+  --radius-lg: 24px;
   --radius-capsule: 50px;
 }
 
@@ -34,10 +40,8 @@
 }
 
 body {
-  /* Fontes modernas estilo Apple/Google */
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+  /* Nova tipografia 'Inter' para visualização mais limpa e tech */
+  font-family: 'Inter', -apple-system, sans-serif;
   background-color: var(--color-bg-space);
   color: var(--color-text-muted);
   line-height: 1.6;
@@ -45,60 +49,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Tipografia e Classes utilitárias */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Tipografia e Core Headings */
+h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-white);
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
-  margin-top: var(--spacing-lg);
-}
-
-h1 {
-  font-size: 2.5rem;
   line-height: 1.2;
 }
 
-h2 {
-  font-size: 2rem;
-}
+h1 { font-size: 3rem; margin-bottom: var(--spacing-md); }
+h2 { font-size: 2.2rem; margin-bottom: var(--spacing-sm); margin-top: var(--spacing-lg); }
+h3 { font-size: 1.5rem; color: var(--color-accent-cyan); margin-bottom: var(--spacing-xs); }
 
-h3 {
-  font-size: 1.5rem;
-  color: var(--color-accent-cyan);
-}
+p { margin-bottom: var(--spacing-md); font-size: 1.1rem; }
 
-p {
-  margin-bottom: var(--spacing-md);
-  font-size: 1.1rem;
-}
+/* Helpers Tipográficos do Tutorial Claude */
+.keyword-primary { color: var(--color-text-white); font-weight: 600; }
+.keyword-cyan { color: var(--color-accent-cyan); font-weight: 600; }
+.keyword-green { color: var(--color-accent-darkgreen); font-weight: 600; }
+.keyword-yellow { color: var(--color-accent-yellow); font-weight: 600; }
 
-/* Classes para palavras chave e negritos usando destaques coloridos */
-.keyword-primary {
-  color: var(--color-text-white);
-  font-weight: 600;
-}
-
-.keyword-cyan {
-  color: var(--color-accent-cyan);
-  font-weight: 600;
-}
-
-.keyword-green {
-  color: var(--color-accent-darkgreen);
-  font-weight: 600;
-}
-
-.keyword-yellow {
-  color: var(--color-accent-yellow);
-  font-weight: 600;
-}
-
-/* Estilo para links genéricos */
 a {
   color: var(--color-accent-cyan);
   text-decoration: none;
@@ -110,33 +79,9 @@ a:hover {
   color: var(--color-text-white);
 }
 
-/* Estrutura base de tabelas do tutorial */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: var(--spacing-lg);
-}
-
-th,
-td {
-  padding: var(--spacing-sm) var(--spacing-md);
-  text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-th {
-  color: var(--color-text-white);
-  font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-ul,
-ol {
-  margin-bottom: var(--spacing-md);
-  padding-left: var(--spacing-lg);
-}
-
-li {
-  margin-bottom: var(--spacing-xs);
-  font-size: 1.1rem;
-}
+/* Listas, Tables Base Tutorial */
+table { width: 100%; border-collapse: collapse; margin-bottom: var(--spacing-lg); }
+th, td { padding: var(--spacing-sm) var(--spacing-md); text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+th { color: var(--color-text-white); font-weight: 600; background-color: rgba(255, 255, 255, 0.05); }
+ul, ol { margin-bottom: var(--spacing-md); padding-left: var(--spacing-lg); }
+li { margin-bottom: var(--spacing-xs); font-size: 1.1rem; }
