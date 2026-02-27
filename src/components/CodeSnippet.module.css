@@ -1,0 +1,62 @@
+.snippetContainer {
+  background-color: var(--color-bg-space); /* Abaixo usamos o panel, aqui usamos o space pro código parecer profundo */
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  overflow: hidden; /* Corta cantos da header para não sair da borda do container */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.snippetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03); /* Aba leve mais clara que o fundo */
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.languageLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 1px; /* Espaço maior entre as letras estilo código */
+  user-select: none; /* Não permite o usuário "selecionar" esse label arrastando o mouse */
+}
+
+/* Base do Botão de Copiar */
+.copyButton {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit; /* Herda a tipografia Apple/Google do body */
+}
+
+.copyButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-white);
+}
+
+/* Modificador via JS quando for copiado (verde) */
+.copyButton.copied {
+  background-color: var(--color-accent-darkgreen);
+  color: var(--color-text-white);
+  border-color: var(--color-accent-darkgreen);
+}
+
+.preBlock {
+  margin: 0;
+  padding: var(--spacing-md);
+  overflow-x: auto; /* IMPORTANTE: Se o código for longo, rola lateralmente e não "estoura" o design do app */
+}
+
+/* Font Monospace estilo Hacker/Editor */
+.codeBlock {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.9rem;
+  color: var(--color-text-white);
+}

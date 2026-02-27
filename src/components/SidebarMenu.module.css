@@ -1,0 +1,89 @@
+.sidebar {
+  background-color: var(--color-bg-panel);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-sm);
+  /* Mobile: Fica no topo (Header) */
+  flex-shrink: 0; 
+  max-height: 25vh; /* Ocupando no máximo ~1/5 a 1/4 da tela em Y */
+  display: flex;
+  flex-direction: column;
+}
+
+.headerProps {
+  margin-bottom: var(--spacing-sm);
+}
+
+.logo {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Mobile: A lista rola horizontalmente (scroll-x) em uma única linha! */
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow-x: auto; /* A Mágica do Scroll Lateral no Celular */
+  gap: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs); /* Evita cortar a scrollbar no celular */
+}
+
+/* Oculta scrollbar no webkit mantendo funcionalidade */
+.navList::-webkit-scrollbar {
+  height: 4px;
+}
+.navList::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-capsule);
+}
+
+.navItem {
+  display: block;
+  white-space: nowrap; /* Impede os botões do menu no celular de quebrarem em duas linhas */
+  padding: var(--spacing-xs) var(--spacing-md);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-capsule);
+  transition: all 0.2s ease;
+}
+
+.navItem:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.active {
+  background-color: var(--color-accent-cyan);
+  color: var(--color-bg-space);
+  font-weight: 700;
+}
+
+/* 
+  Media Query para Desktop (> 768px): 
+  Vira menu lateral (Side-bar)
+*/
+@media (min-width: 768px) {
+  .sidebar {
+    width: 280px; /* Largura Fixada */
+    max-height: none;
+    height: 100vh;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    position: sticky;
+    top: 0; /* Gruda no topo quando dá scroll */
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  /* Em vez de scroll horizontal, no desktop a lista cresce para baixo normalmente */
+  .navList {
+    flex-direction: column;
+    overflow-x: visible; /* Tira o scroll forceçado */
+  }
+
+  .navItem {
+    white-space: normal; /* Permite quebrar linha em títulos mais longos para o desktop */
+    margin-bottom: var(--spacing-xs);
+  }
+}

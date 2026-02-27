@@ -1,0 +1,51 @@
+.capsuleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-panel);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md); /* Parecido com botões pílulas mas um pouco maior = Card horizontal */
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.capsuleContainer:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent-cyan);
+  background-color: rgba(6, 182, 212, 0.05); /* Cyan bem fraquinho no hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  flex: 1;
+}
+
+.moduleTitle {
+  font-size: 1.25rem;
+  color: var(--color-text-white);
+  margin-top: 0;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.moduleDescription {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.arrowIcon {
+  margin-left: var(--spacing-md);
+  color: var(--color-accent-cyan); /* Ícone no cyan */
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.capsuleContainer:hover .arrowIcon {
+  opacity: 1;
+  transform: translateX(4px);
+}

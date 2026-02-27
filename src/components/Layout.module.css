@@ -1,0 +1,30 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column; /* Mobile: empilha verticalmente */
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+}
+
+.contentWrapper {
+  max-width: 800px;
+  margin: 0 auto; /* Centraliza o conteúdo solto da main no Desktop */
+}
+
+/* 
+  Media Query para Desktop (telas > 768px): 
+  Muda de coluna (mobile) para linha (desktop) = Sidebar lateral!
+*/
+@media (min-width: 768px) {
+  .layoutContainer {
+    flex-direction: row; 
+  }
+
+  .mainContent {
+    padding: var(--spacing-xl);
+  }
+}
