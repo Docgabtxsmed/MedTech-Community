@@ -6,16 +6,23 @@
 
 /* --- HERO SECTION --- */
 .heroSection {
-  background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.15), transparent 40%),
-              radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.1), transparent 40%);
   background-color: var(--color-bg-medical);
+  background-image: 
+    radial-gradient(circle at top right, rgba(0, 240, 255, 0.15), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(0, 240, 255, 0.05), transparent 50%),
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  background-position: center;
   padding: var(--spacing-xxl) var(--spacing-lg);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  text-align: center;
-  min-height: 70vh;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+  min-height: 80vh;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+  position: relative;
+  overflow: hidden;
 }
 
 .heroContent {
@@ -23,52 +30,102 @@
 }
 
 .heroTitle {
-  font-size: 3.5rem;
+  font-size: 4rem;
   line-height: 1.1;
   margin-bottom: var(--spacing-md);
   letter-spacing: -1px;
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
 }
 
 .highlight {
   color: var(--color-accent-cyan);
-  background: -webkit-linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-blue));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
 }
 
 .heroSubtitle {
   font-size: 1.25rem;
   color: var(--color-text-muted);
   margin-bottom: var(--spacing-lg);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 700px;
+}
+
+.heroList {
+  text-align: left;
+  list-style-type: none;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-white);
+  font-size: 1.15rem;
+  max-width: 650px;
+  padding-left: 0;
+}
+
+.heroList > li {
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.heroList > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-text-white);
+}
+
+.heroList ul {
+  list-style-type: none;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.heroList ul li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 18px;
+  color: var(--color-text-muted);
+}
+
+.heroList ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--color-text-white);
+  border-radius: 50%;
+  background-color: transparent;
 }
 
 .ctaGroup {
   display: flex;
   gap: var(--spacing-md);
-  justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .primaryBtn {
-  background: var(--color-text-white);
-  color: var(--color-bg-medical);
-  padding: 14px 28px;
+  background: transparent;
+  color: var(--color-accent-cyan);
+  border: 1px solid var(--color-accent-cyan);
+  padding: 12px 32px;
   border-radius: var(--radius-capsule);
   font-weight: 700;
   font-size: 1.1rem;
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15), inset 0 0 10px rgba(0, 240, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
 .primaryBtn:hover {
-  background: var(--color-accent-cyan);
-  color: var(--color-text-white);
+  background: rgba(0, 240, 255, 0.05);
+  color: var(--color-accent-cyan);
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(0, 240, 255, 0.1);
 }
 
 .secondaryBtn {
@@ -113,17 +170,18 @@
 
 .card {
   background-color: var(--color-bg-panel);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.1);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
-  transition: transform 0.3s, border-color 0.3s;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  border-color: rgba(6, 182, 212, 0.3);
+  border-color: var(--color-accent-cyan);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
 }
 
 .cardBadge {

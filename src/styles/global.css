@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* Variáveis e Paleta de Cores Premium (MedTech Design System) */
 :root {
-  /* Backgrounds: Mistura de Naval Escuro (Confiabilidade) com Fundo Clean */
-  --color-bg-space: #0f172a; /* Slate 900 - Fundo Geral/Landing */
-  --color-bg-panel: #1e293b; /* Slate 800 - Cards e Elevações */
-  --color-bg-medical: #082f49; /* Sky 900 - Tom clínico de confiaça (Header/Hero) */
-  
+  /* Backgrounds: Dark Tech (Fundo Preto/Neon) */
+  --color-bg-space: #02040a; /* Fundo Geral bem escuro */
+  --color-bg-panel: #080c14; /* Escuro translúcido para Cards */
+  --color-bg-medical: #000000; /* Preto absoluto ou degradê */
+
   /* Cores de Texto Principais */
-  --color-text-white: #f8fafc; /* Slate 50 - Quase branco puro */
-  --color-text-muted: #cbd5e1; /* Slate 300 - Branco acinzentado */
-  
-  /* Destaques (Accent Colors) */
-  --color-accent-cyan: #06b6d4; /* Cyan 500 - Tech, Links, Call to Actions */
-  --color-accent-blue: #3b82f6; /* Blue 500 - Brand primary */
-  --color-accent-darkgreen: #10b981; /* Emerald 500 - Success/Tech */
-  --color-accent-yellow: #eab308; /* Yellow 500 - Highlights */
-  
+  --color-text-white: #ffffff;
+  --color-text-muted: #a3b8cc;
+
+  /* Destaques (Accent Colors) - Baseados nas Imagens */
+  --color-accent-cyan: #00f0ff; /* Neon Cyan - Tech, Links, Call to Actions */
+  --color-accent-blue: #0088ff; /* Vibrant Blue */
+  --color-accent-darkgreen: #00ff88; /* Neon Green */
+  --color-accent-yellow: #eab308;
+
   /* Espaçamentos Consistentes */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -24,7 +24,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-xxl: 5rem;
-  
+
   /* Bordas */
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -41,7 +41,10 @@
 
 body {
   /* Nova tipografia 'Inter' para visualização mais limpa e tech */
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
   background-color: var(--color-bg-space);
   color: var(--color-text-muted);
   line-height: 1.6;
@@ -50,23 +53,54 @@ body {
 }
 
 /* Tipografia e Core Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-text-white);
   font-weight: 700;
   line-height: 1.2;
 }
 
-h1 { font-size: 3rem; margin-bottom: var(--spacing-md); }
-h2 { font-size: 2.2rem; margin-bottom: var(--spacing-sm); margin-top: var(--spacing-lg); }
-h3 { font-size: 1.5rem; color: var(--color-accent-cyan); margin-bottom: var(--spacing-xs); }
+h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+h3 {
+  font-size: 1.5rem;
+  color: var(--color-accent-cyan);
+  margin-bottom: var(--spacing-xs);
+}
 
-p { margin-bottom: var(--spacing-md); font-size: 1.1rem; }
+p {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+}
 
 /* Helpers Tipográficos do Tutorial Claude */
-.keyword-primary { color: var(--color-text-white); font-weight: 600; }
-.keyword-cyan { color: var(--color-accent-cyan); font-weight: 600; }
-.keyword-green { color: var(--color-accent-darkgreen); font-weight: 600; }
-.keyword-yellow { color: var(--color-accent-yellow); font-weight: 600; }
+.keyword-primary {
+  color: var(--color-text-white);
+  font-weight: 600;
+}
+.keyword-cyan {
+  color: var(--color-accent-cyan);
+  font-weight: 600;
+}
+.keyword-green {
+  color: var(--color-accent-darkgreen);
+  font-weight: 600;
+}
+.keyword-yellow {
+  color: var(--color-accent-yellow);
+  font-weight: 600;
+}
 
 a {
   color: var(--color-accent-cyan);
@@ -80,8 +114,28 @@ a:hover {
 }
 
 /* Listas, Tables Base Tutorial */
-table { width: 100%; border-collapse: collapse; margin-bottom: var(--spacing-lg); }
-th, td { padding: var(--spacing-sm) var(--spacing-md); text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-th { color: var(--color-text-white); font-weight: 600; background-color: rgba(255, 255, 255, 0.05); }
-ul, ol { margin-bottom: var(--spacing-md); padding-left: var(--spacing-lg); }
-li { margin-bottom: var(--spacing-xs); font-size: 1.1rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-lg);
+}
+th,
+td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+th {
+  color: var(--color-text-white);
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+ul,
+ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+}
+li {
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.1rem;
+}

@@ -11,12 +11,12 @@ const PublicLayout: React.FC = () => {
       <header className={css.navbar}>
         <div className={css.navContent}>
           <div className={css.logo}>
-            <span className={css.logoIcon}>✚</span> MedTech<span className={css.logoLight}>Community</span>
+            <span className={css.logoIcon}>■</span> MED<span className={css.logoLight}>TECH</span>
           </div>
           <nav className={css.navLinks}>
             <Link to="/">Início</Link>
-            <Link to="/biblioteca">Biblioteca de IA</Link>
-            <a href="#produtos">MVPs</a>
+            <Link to="/biblioteca">Trilhas Tech</Link>
+            <a href="#produtos">Produtos e MVPs</a>
             <button className={css.loginBtn}>Acessar</button>
           </nav>
         </div>
